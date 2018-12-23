@@ -12,7 +12,7 @@ public interface UrlRepository extends JpaRepository<Url, Long> {
 
     Optional<Url> findByTinyUrl(String tinyUrl);
 
-    @Query(value = "SELECT url_seq.nextval as NEXTVAL FROM dual", nativeQuery = true)
+    @Query(value = "select next_val as id_val from url_seq", nativeQuery = true)
     Long getNextSeqId();
 
 }
