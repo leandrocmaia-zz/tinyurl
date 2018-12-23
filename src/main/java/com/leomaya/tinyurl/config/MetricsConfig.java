@@ -28,9 +28,6 @@ public class MetricsConfig {
     @Value("${spring.application.name}")
     private String serviceName;
 
-    @Value("${spring.heroku.graphite.apiKey}")
-    private String apiKey;
-
     @PostConstruct
     void registerCounters(){
         error = Metrics.counter("app.exception.count");
